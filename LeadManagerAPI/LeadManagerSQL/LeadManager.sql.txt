@@ -1,0 +1,45 @@
+CREATE TABLE Jobs (
+    JobID SERIAL PRIMARY KEY,
+    LeadID INT REFERENCES Leads(LeadID) ON DELETE CASCADE,
+    JobDescription TEXT,
+    JobDate TIMESTAMP,
+    JobPrice NUMERIC(10,2),
+    JobCategory VARCHAR(100)
+);
+
+CREATE TABLE Contacts (
+    ContactID SERIAL PRIMARY KEY,
+    FullName VARCHAR(200) NOT NULL,
+    Email VARCHAR(200),
+    PhoneNumber VARCHAR(20),
+    Suburb VARCHAR(100)
+);
+
+CREATE TABLE Categories (
+    CategoryID SERIAL PRIMARY KEY,
+    CategoryName VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Leads (
+    LeadID SERIAL PRIMARY KEY,
+    ContactFirstName VARCHAR(100) NOT NULL,
+    ContactFullName VARCHAR(200),
+    ContactPhoneNumber VARCHAR(20),
+    ContactEmail VARCHAR(200),
+    Suburb VARCHAR(100),
+    Category VARCHAR(100),
+    Price NUMERIC(10,2),
+    Description TEXT,
+    Status VARCHAR(50) CHECK (Status IN ('Invited', 'Accepted', 'Declined')),
+    DateCreated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE LeadLogs (
+    LogID SERIAL PRIMARY KEY,
+    LeadID INT REFERENCES Leads(LeadID) ON DELETE CASCADE,
+    Status VARCHAR(50) CHECK (Status IN ('Accepted', 'Declined')),
+    PriceApplied NUMERIC(10,2), -- Preço com desconto, se aplicável
+    DiscountApplied NUMERIC(5,2), -- % de desconto aplicado
+    ActionDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    NotificationSent BOOLEAN -- Indica se uma notificação foi enviada
+);

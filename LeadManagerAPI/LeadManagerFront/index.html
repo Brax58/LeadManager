@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Management</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <button id="invitedTab" class="tab active" onclick="showInvited()">Invited</button>
+            <button id="acceptedTab" class="tab" onclick="showAccepted()">Accepted</button>
+        </div>
+
+        <!-- Invited Tab Content -->
+        <div id="invited" class="tab-content">
+            <div class="lead-card">
+                <h3>Bill</h3>
+                <p>Job Date: January 4 @ 2:37 pm</p>
+                <p>Category: Painters</p>
+                <p>Job ID: 5577421</p>
+                <p>Description: Need to paint 2 aluminum windows and a sliding glass door</p>
+                <p>Price: $62.00</p>
+                <button class="accept-btn" onclick="acceptLead('Bill', 62)">Accept</button>
+                <button class="decline-btn" onclick="declineLead('Bill')">Decline</button>
+            </div>
+            <div class="lead-card">
+                <h3>Craig</h3>
+                <p>Job Date: January 4 @ 1:15 pm</p>
+                <p>Category: Interior Painters</p>
+                <p>Job ID: 5588872</p>
+                <p>Description: Paint interior walls 3 colours</p>
+                <p>Price: $49.00</p>
+                <button class="accept-btn" onclick="acceptLead('Craig', 49)">Accept</button>
+                <button class="decline-btn" onclick="declineLead('Craig')">Decline</button>
+            </div>
+        </div>
+
+        <!-- Accepted Tab Content -->
+        <div id="accepted" class="tab-content hidden">
+            <div class="lead-card">
+                <h3>Pete</h3>
+                <p>Job Date: September 5, 2018 @ 10:36 am</p>
+                <p>Category: General Building Work</p>
+                <p>Job ID: 5141895</p>
+                <p>Description: Plaster exposed brick walls, square off 2 archways and expand pantry</p>
+                <p>Price: $26.00</p>
+            </div>
+            <div class="lead-card">
+                <h3>Chris Sanderson</h3>
+                <p>Job Date: August 30, 2018 @ 11:14 am</p>
+                <p>Category: Home Renovations</p>
+                <p>Job ID: 5121931</p>
+                <p>Description: Convert two-story building to self-contained living area</p>
+                <p>Price: $32.00</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
