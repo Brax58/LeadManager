@@ -1,8 +1,14 @@
-﻿namespace LeadManager.Domain.DomainObjects
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace LeadManager.Domain.DomainObjects
 {
+    [Table("LeadLog")]
     public class LeadLog
     {
+        [Key]
         public int LogID { get; set; }
+
         public int LeadID { get; set; }
         public string? Status { get; set; } // Values: "Accepted", "Declined"
         public decimal PriceApplied { get; set; }

@@ -1,8 +1,14 @@
-﻿namespace LeadManager.Domain.DomainObjects
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace LeadManager.Domain.DomainObjects
 {
+    [Table("Lead")]
     public class Lead
     {
+        [Key]
         public int LeadID { get; set; }
+
         public string? ContactFirstName { get; set; }
         public string? ContactFullName { get; set; }
         public string? ContactPhoneNumber { get; set; }
