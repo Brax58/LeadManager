@@ -442,11 +442,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Eu\\source\\repos\\LeadManagerAPI\\LeadManagerAPI\\LeadManagerAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Eu\\source\\repos\\LeadManager\\LeadManagerAPI\\LeadManagerAPI\\LeadManagerAPI.csproj",
       "projectName": "LeadManagerAPI",
-      "projectPath": "C:\\Users\\Eu\\source\\repos\\LeadManagerAPI\\LeadManagerAPI\\LeadManagerAPI.csproj",
+      "projectPath": "C:\\Users\\Eu\\source\\repos\\LeadManager\\LeadManagerAPI\\LeadManagerAPI\\LeadManagerAPI.csproj",
       "packagesPath": "C:\\Users\\Eu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Eu\\source\\repos\\LeadManagerAPI\\LeadManagerAPI\\obj\\",
+      "outputPath": "C:\\Users\\Eu\\source\\repos\\LeadManager\\LeadManagerAPI\\LeadManagerAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Eu\\AppData\\Roaming\\NuGet\\NuGet.Config",

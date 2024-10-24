@@ -1,0 +1,12 @@
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\obj\Debug\net6.0\LeadManager.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\obj\Debug\net6.0\LeadManager.Domain.AssemblyInfoInputs.cache
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\obj\Debug\net6.0\LeadManager.Domain.AssemblyInfo.cs
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\obj\Debug\net6.0\LeadManager.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\obj\Debug\net6.0\LeadManager.Domain.sourcelink.json
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\bin\Debug\net6.0\LeadManager.Domain.deps.json
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\bin\Debug\net6.0\LeadManager.Domain.dll
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\bin\Debug\net6.0\LeadManager.Domain.pdb
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\obj\Debug\net6.0\LeadManager.Domain.dll
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\obj\Debug\net6.0\refint\LeadManager.Domain.dll
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\obj\Debug\net6.0\LeadManager.Domain.pdb
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\obj\Debug\net6.0\ref\LeadManager.Domain.dll
