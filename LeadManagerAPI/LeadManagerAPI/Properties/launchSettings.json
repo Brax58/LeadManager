@@ -16,7 +16,8 @@
       "launchUrl": "swagger",
       "applicationUrl": "https://localhost:7104;http://localhost:5160",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "LeadManagerDBConnection": "Server=localhost,1433;Database=LeadManager;User Id=sa;Password=SuperPassword@23;TrustServerCertificate=True;"
       }
     },
     "IIS Express": {

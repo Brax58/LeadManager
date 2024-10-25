@@ -10,3 +10,9 @@ C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Repository\obj\D
 C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Repository\obj\Debug\net6.0\refint\LeadManager.Repository.dll
 C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Repository\obj\Debug\net6.0\LeadManager.Repository.pdb
 C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Repository\obj\Debug\net6.0\ref\LeadManager.Repository.dll
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Repository\obj\Debug\net6.0\LeadManager.Repository.csproj.AssemblyReference.cache
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Repository\bin\Debug\net6.0\LeadManager.Domain.dll
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Repository\bin\Debug\net6.0\LeadManager.Domain.pdb
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Repository\bin\Debug\net6.0\LeadManager.Repository.runtimeconfig.json
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Repository\obj\Debug\net6.0\LeadManager.Repository.genruntimeconfig.cache
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Repository\obj\Debug\net6.0\LeadManager.Repository.csproj.CopyComplete

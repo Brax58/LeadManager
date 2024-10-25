@@ -10,3 +10,9 @@ C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Service\obj\Debu
 C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Service\obj\Debug\net6.0\refint\LeadManager.Service.dll
 C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Service\obj\Debug\net6.0\LeadManager.Service.pdb
 C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Service\obj\Debug\net6.0\ref\LeadManager.Service.dll
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Service\obj\Debug\net6.0\LeadManager.Service.csproj.AssemblyReference.cache
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Service\bin\Debug\net6.0\LeadManager.Domain.dll
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Service\bin\Debug\net6.0\LeadManager.Repository.dll
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Service\bin\Debug\net6.0\LeadManager.Domain.pdb
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Service\bin\Debug\net6.0\LeadManager.Repository.pdb
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Service\obj\Debug\net6.0\LeadManager.Service.csproj.CopyComplete
