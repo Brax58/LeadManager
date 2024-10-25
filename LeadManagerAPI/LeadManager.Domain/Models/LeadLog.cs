@@ -11,7 +11,7 @@ namespace LeadManager.Domain.Models
         public string? Status { get; set; } // Values: "Accepted", "Declined"
         public decimal PriceApplied { get; set; }
         public decimal? DiscountApplied { get; set; }// Optional, % discount applied
-        public DateTime ActionDate { get; set; } = DateTime.Now;
+        public DateTime ActionDate { get; set; }
         public bool NotificationSent { get; set; }
 
 

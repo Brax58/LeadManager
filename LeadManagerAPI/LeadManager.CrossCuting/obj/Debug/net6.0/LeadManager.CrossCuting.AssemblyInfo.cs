@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LeadManager.CrossCuting")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d6dbd826c43edc5f076362da0b98a9e2589369af")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+700662f8bf16dd2e49356ebf29b65aa4f519c22f")]
 [assembly: System.Reflection.AssemblyProductAttribute("LeadManager.CrossCuting")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LeadManager.CrossCuting")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -27,12 +27,12 @@ namespace LeadManager.CrossCuting.IOC
 
         private static void AddRepositorys(IServiceCollection services) 
         {
-            services.AddScoped<ILeadRepository, LeadRepository>();
+            services.AddScoped<IJobRepository, JobRepository>();
             services.AddScoped<ILogLeadRepository, LogLeadRepository>();
         }
         private static void AddServices(IServiceCollection services)
         {
-            services.AddScoped<ILeadManagerService, LeadManagerService>();
+            services.AddScoped<IJobService, JobService>();
         }
     }
 }

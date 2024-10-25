@@ -1,17 +1,19 @@
 ﻿using LeadManager.Domain.Enum;
 
-namespace LeadManager.Domain.Models.Entrada
+namespace LeadManager.Domain.Models.Request
 {
-    public class LeadStatusRequest
+    public class UpdateLeadJobStatusRequest
     {
-        public EStatus StatusLead { get; private set; }
+        public int IdJob { get; set; }
+        public EStatus StatusLead { get; set; }
 
-        public LeadStatusRequest()
+        public UpdateLeadJobStatusRequest()
         {
             StatusLead = new EStatus();
+            IdJob = 0;
         }
 
-        public bool ValidateStatus(int status) 
+        public bool ValidateStatus(int status)
         {
             if (status > 0 && status < 4)
                 return true;
@@ -21,12 +23,17 @@ namespace LeadManager.Domain.Models.Entrada
 
         public void InsertStatus(int status)
         {
-            if(status == (int)EStatus.Accepted)
+            if (status == (int)EStatus.Accepted)
                 StatusLead = EStatus.Accepted;
             else if (status == (int)EStatus.Declined)
                 StatusLead = EStatus.Declined;
             else if (status == (int)EStatus.Invited)
                 StatusLead = EStatus.Invited;
+        }
+
+        public void InsertIdJob(int idLead) 
+        {
+            IdJob = idLead;
         }
     }
 }

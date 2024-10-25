@@ -1,5 +1,4 @@
-﻿using Azure.Core;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace LeadManager.Domain.Models
 {
@@ -16,10 +15,8 @@ namespace LeadManager.Domain.Models
         public string? Category { get; set; }
         public decimal Price { get; set; }
         public string? Description { get; set; }
-        public string? Status { get; set; } // Values: "Invited", "Accepted", "Declined"
-        public DateTime DateCreated { get; set; } = DateTime.Now;
-
-        // Navigation properties
+        public string? Status { get; set; }
+        public DateTime DateCreated { get; set; }
         public virtual ICollection<LeadLog> LeadLogs { get; set; }
         public virtual ICollection<Job> Jobs { get; set; }
 
@@ -27,6 +24,11 @@ namespace LeadManager.Domain.Models
         {
             if (Price >= 500 && Status == "Accepted")
                 Price = Price - (Price * 0.10m);
+        }
+
+        public void UpdateStatusLead(string status) 
+        {
+            Status = status;
         }
     }
 }
