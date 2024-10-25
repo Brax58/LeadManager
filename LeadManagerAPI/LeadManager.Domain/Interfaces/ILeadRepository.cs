@@ -3,7 +3,7 @@ using LeadManager.Domain.Models.Entrada;
 
 namespace LeadManager.Domain.Interfaces
 {
-    public interface ILeadManagerRepository
+    public interface ILeadRepository
     {
         public IEnumerable<Lead> GetListLeadsByStatus(LeadStatusRequest request);
         public void UpdateStatusLead(Lead request);

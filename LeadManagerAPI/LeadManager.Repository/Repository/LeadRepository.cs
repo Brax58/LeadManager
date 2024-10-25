@@ -1,14 +1,13 @@
 ﻿using LeadManager.Domain.Interfaces;
 using LeadManager.Domain.Models;
 using LeadManager.Domain.Models.Entrada;
-using LeadManager.Domain.Models.Request;
 using LeadManager.Repository.Context;
 
 namespace LeadManager.Repository.Repository
 {
-    public class LeadManagerRepository : BaseContext<Lead>, ILeadManagerRepository
+    public class LeadRepository : BaseContext<Lead>, ILeadRepository
     {
-        public LeadManagerRepository(LeadManagerContext context) : base(context) { }
+        public LeadRepository(LeadManagerContext context) : base(context) { }
 
         public IEnumerable<Lead> GetListLeadsByStatus(LeadStatusRequest request)
         {

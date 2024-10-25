@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Azure.Core;
+using System.ComponentModel.DataAnnotations;
 
 namespace LeadManager.Domain.Models
 {
@@ -24,7 +25,7 @@ namespace LeadManager.Domain.Models
 
         public void ApplyingDiscounPrice()
         {
-            if (Price >= 500)
+            if (Price >= 500 && Status == "Accepted")
                 Price = Price - (Price * 0.10m);
         }
     }

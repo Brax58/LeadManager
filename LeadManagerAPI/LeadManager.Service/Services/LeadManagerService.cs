@@ -7,25 +7,33 @@ namespace LeadManager.Service.Services
 {
     public class LeadManagerService : ILeadManagerService
     {
-        public readonly ILeadManagerRepository _LeadManagerRepository;
+        public readonly ILeadRepository _LeadRepository;
+        public readonly ILogLeadRepository _LogLeadRepository;
 
-        public LeadManagerService(ILeadManagerRepository leadManagerRepository)
+        public LeadManagerService(ILeadRepository leadRepository, ILogLeadRepository logLeadRepository)
         {
-            _LeadManagerRepository = leadManagerRepository;
+            _LeadRepository = leadRepository;
+            _LogLeadRepository = logLeadRepository;
         }
 
         public IEnumerable<Lead> GetListLeadsByStatus(LeadStatusRequest request) 
         {
-            return _LeadManagerRepository.GetListLeadsByStatus(request);
+            return _LeadRepository.GetListLeadsByStatus(request);
         }
 
         public void UpdateStatusLead(UpdateLeadStatusRequest request)
         {
-            var lead = _LeadManagerRepository.GetLeadById(request.IdLead);
+            var lead = _LeadRepository.GetLeadById(request.IdLead);
+
+            var actualPrice = lead.Price;
+
+            var statusText = Enum.GetName(request.StatusLead);
 
             lead.ApplyingDiscounPrice();
 
-            _LeadManagerRepository.UpdateStatusLead(lead);
+            _LeadRepository.UpdateStatusLead(lead);
+
+            _LogLeadRepository.InsertLogLead(new LeadLog(lead.LeadID, statusText, lead.Price,actualPrice));
         }
     }
 }
