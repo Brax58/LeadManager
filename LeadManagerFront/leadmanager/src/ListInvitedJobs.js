@@ -19,7 +19,7 @@ export function ListInvitedJobs() {
         };
 
         fetchJobs();
-    }, []);
+    }, [jobs]);
 
     if (loading) {
         return <div className="centralizada">Carregando...</div>;
@@ -40,27 +40,26 @@ export function ListInvitedJobs() {
                             <p className="text-sm">{job.lead.suburb}</p>
                             <p className="text-sm">{job.jobCategory}</p>
                             <p className="text-sm">Job ID: {job.jobID}</p>
+                            <p className="text-neutral-700 text-sm mt-2">Description:{job.jobDescription}</p>
                         </div>
 
-                        <p className="text-neutral-700 text-sm mt-2">{job.jobDescription}</p>
 
                         <div className="flex justify-between items-center mt-4">
                             <div className="flex gap-4">
                                 <button
                                     onClick={() => UpdateLead({ leadId: job.jobID, statusLead: 2 })}
-                                    className="border-orange-500 button-orange text-white rounded-lg px-4 py-2 font-semibold shadow"
+                                    className="border-orange-500 button-accepted rounded-lg px-4 py-2 font-semibold shadow"
                                 >
                                     Aceitar
                                 </button>
                                 <button
                                     onClick={() => UpdateLead({ leadId: job.jobID, statusLead: 3 })}
-                                    className="border-orange-500 button-orange text-white rounded-lg px-4 py-2 font-semibold shadow"
+                                    className="border-orange-500 button-declined rounded-lg px-4 py-2 font-semibold shadow"
                                 >
                                     Recusar
                                 </button>
                             </div>
-                            <p className="text-neutral-600 text-sm">
-                                {job.jobPrice} - Convite de Trabalho
+                            <p className="text-neutral-600 text-sm"> {job.jobPrice}$ - Convite de Trabalho
                             </p>
                         </div>
                     </div>

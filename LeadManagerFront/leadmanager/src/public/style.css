@@ -128,8 +128,6 @@ input:where([type="reset"]),
 input:where([type="submit"]) {
   appearance: button;
   -webkit-appearance: button;
-  background-color: transparent;
-  background-image: none;
 }
 :-moz-focusring {
   outline: auto;
@@ -356,6 +354,7 @@ video {
 }
 #webcrumbs .flex-col {
   flex-direction: column;
+  margin-bottom: 20px;
 }
 #webcrumbs .items-center {
   align-items: center;
@@ -443,10 +442,17 @@ video {
   line-height: 24px !important;
 }
 
-.button-orange{
-  color: rgb(234 88 12 / var(--tw-text-opacity));
+.button-accepted{
+  color: white;
+  background-color: orange;
   padding-right: 10px;
 }
+
+.button-declined{
+  background-color: rgb(226, 219, 219);
+  padding-right: 10px;
+}
+
 
 .centralizada {
   text-align: center;

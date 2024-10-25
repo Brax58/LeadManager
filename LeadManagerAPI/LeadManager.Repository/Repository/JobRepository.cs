@@ -27,12 +27,11 @@ namespace LeadManager.Repository.Repository
             db.Job.Include(x => x.Lead).ToList();
 
         public override Job GetById(int? id) =>
-            db.Job.Include(x => x.Lead).First();
+            db.Job.Include(x => x.Lead).FirstOrDefault(x => x.JobID == id);
 
         public override void Update(Job request)
         {
-            db.Job.Update(request);
-            db.SaveChanges();
+            db.Update(request);
         }
     }
 }
