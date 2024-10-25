@@ -5,44 +5,44 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LeadManagerAPI.Controllers
 {
-    [Route("Lead")]
+    [Route("Job")]
     [Produces("application/json")]
-    public class LeadController : ControllerBase
+    public class JobController : ControllerBase
     {
-        private readonly ILeadManagerService _leadManagerService;
+        private readonly IJobService _leadManagerService;
 
-        public LeadController(ILeadManagerService service)
+        public JobController(IJobService service)
         {
             _leadManagerService = service;
         }
 
         [HttpGet]
-        public IActionResult GetLeads(int leadStatus)
+        public IActionResult GetJobs(int leadStatus)
         {
-            var request = new LeadStatusRequest();
+            var request = new GetJobsStatusRequest();
 
             if (request.ValidateStatus(leadStatus))
             {
                 request.InsertStatus(leadStatus);
             };
 
-            var returnRequest = _leadManagerService.GetListLeadsByStatus(request);
+            var returnRequest = _leadManagerService.GetListJobsByStatus(request);
 
             return Ok(returnRequest);
         }
-
-        [HttpPut("{id}")]
-        public IActionResult UpdateStatusLead(int leadStatus, int id)
+        
+        [HttpPut]
+        public IActionResult UpdateStatusLead( int id, int leadStatus)
         {
-            var request = new UpdateLeadStatusRequest();
+            var request = new UpdateLeadJobStatusRequest();
 
             if (request.ValidateStatus(leadStatus))
             {
                 request.InsertStatus(leadStatus);
-                request.InsertStatus(id);
+                request.InsertIdJob(id);
             };
 
-            _leadManagerService.UpdateStatusLead(request);
+            _leadManagerService.UpdateStatusLeadJob(request);
 
             return Ok();
         }

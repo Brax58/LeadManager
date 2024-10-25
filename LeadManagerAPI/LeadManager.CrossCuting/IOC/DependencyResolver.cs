@@ -12,8 +12,8 @@ namespace LeadManager.CrossCuting.IOC
         public static void AddDependencyResolver(this IServiceCollection services) 
         {
             AddConnectionDataBase(services);
-            AddServices(services);
             AddRepositorys(services);
+            AddServices(services);
         }
 
         private static void AddConnectionDataBase(IServiceCollection services)
@@ -27,12 +27,12 @@ namespace LeadManager.CrossCuting.IOC
 
         private static void AddRepositorys(IServiceCollection services) 
         {
-            services.AddScoped<ILeadRepository, LeadRepository>();
+            services.AddScoped<IJobRepository, JobRepository>();
             services.AddScoped<ILogLeadRepository, LogLeadRepository>();
         }
         private static void AddServices(IServiceCollection services)
         {
-            services.AddScoped<ILeadManagerService, LeadManagerService>();
+            services.AddScoped<IJobService, JobService>();
         }
     }
 }

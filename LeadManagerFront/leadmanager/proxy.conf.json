@@ -1,0 +1,6 @@
+{
+    "/Job": {
+      "target": "https://localhost:7104",
+      "secure": false
+    }
+  }
