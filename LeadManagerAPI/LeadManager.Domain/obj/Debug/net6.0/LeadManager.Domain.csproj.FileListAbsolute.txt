@@ -10,3 +10,6 @@ C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\obj\Debug
 C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\obj\Debug\net6.0\refint\LeadManager.Domain.dll
 C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\obj\Debug\net6.0\LeadManager.Domain.pdb
 C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\obj\Debug\net6.0\ref\LeadManager.Domain.dll
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\bin\Debug\net6.0\LeadManager.Domain.runtimeconfig.json
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\obj\Debug\net6.0\LeadManager.Domain.genruntimeconfig.cache
+C:\Users\Eu\source\repos\LeadManager\LeadManagerAPI\LeadManager.Domain\obj\Debug\net6.0\LeadManager.Domain.csproj.AssemblyReference.cache

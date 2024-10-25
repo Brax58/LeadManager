@@ -11,7 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeadManager.Domain", "LeadM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeadManager.Service", "LeadManager.Service\LeadManager.Service.csproj", "{EF682AA1-1B04-4B4D-912B-7A0A05290790}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadManager.CrossCuting", "LeadManager.CrossCuting\LeadManager.CrossCuting.csproj", "{FEF46BF4-76BD-44FE-B58E-7F44718C695C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeadManager.CrossCuting", "LeadManager.CrossCuting\LeadManager.CrossCuting.csproj", "{FEF46BF4-76BD-44FE-B58E-7F44718C695C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D32ED68F-75A3-4D7B-8EFF-A5F69A7B3DA7}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

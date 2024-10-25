@@ -1,13 +1,9 @@
-CREATE TABLE Jobs (
-    JobID SERIAL PRIMARY KEY,
-    LeadID INT REFERENCES Leads(LeadID) ON DELETE CASCADE,
-    JobDescription TEXT,
-    JobDate TIMESTAMP,
-    JobPrice NUMERIC(10,2),
-    JobCategory VARCHAR(100)
+CREATE TABLE Category (
+    CategoryID SERIAL PRIMARY KEY,
+    CategoryName VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE Contacts (
+CREATE TABLE Contact (
     ContactID SERIAL PRIMARY KEY,
     FullName VARCHAR(200) NOT NULL,
     Email VARCHAR(200),
@@ -15,12 +11,7 @@ CREATE TABLE Contacts (
     Suburb VARCHAR(100)
 );
 
-CREATE TABLE Categories (
-    CategoryID SERIAL PRIMARY KEY,
-    CategoryName VARCHAR(100) NOT NULL
-);
-
-CREATE TABLE Leads (
+CREATE TABLE Lead (
     LeadID SERIAL PRIMARY KEY,
     ContactFirstName VARCHAR(100) NOT NULL,
     ContactFullName VARCHAR(200),
@@ -30,16 +21,99 @@ CREATE TABLE Leads (
     Category VARCHAR(100),
     Price NUMERIC(10,2),
     Description TEXT,
-    Status VARCHAR(50) CHECK (Status IN ('Invited', 'Accepted', 'Declined')),
+    Status VARCHAR(50),
     DateCreated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE LeadLogs (
+CREATE TABLE Job (
+    JobID SERIAL PRIMARY KEY,
+    LeadID INT REFERENCES Lead(LeadID) ON DELETE CASCADE,
+    JobDescription TEXT,
+    JobDate TIMESTAMP,
+    JobPrice NUMERIC(10,2),
+    JobCategory VARCHAR(100)
+);
+
+CREATE TABLE LeadLog (
     LogID SERIAL PRIMARY KEY,
-    LeadID INT REFERENCES Leads(LeadID) ON DELETE CASCADE,
-    Status VARCHAR(50) CHECK (Status IN ('Accepted', 'Declined')),
+    LeadID INT REFERENCES Lead(LeadID) ON DELETE CASCADE,
+    Status VARCHAR(50),
     PriceApplied NUMERIC(10,2), -- Preço com desconto, se aplicável
     DiscountApplied NUMERIC(5,2), -- % de desconto aplicado
     ActionDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     NotificationSent BOOLEAN -- Indica se uma notificação foi enviada
 );
+
+-- Inserindo nas tabelas de Category
+INSERT INTO Category (CategoryID, CategoryName) VALUES
+(1, 'Plumbing'),
+(2, 'Electrical'),
+(3, 'Landscaping'),
+(4, 'Cleaning'),
+(5, 'Painting');
+
+-- Inserindo nas tabelas de Contact
+INSERT INTO Contact (ContactID, FullName, Email, PhoneNumber, Suburb) VALUES
+(1, 'John Doe', 'john.doe@example.com', '1234567890', 'SuburbA'),
+(2, 'Jane Smith', 'jane.smith@example.com', '0987654321', 'SuburbB'),
+(3, 'Mike Johnson', 'mike.johnson@example.com', '1112223333', 'SuburbC'),
+(4, 'Emily Davis', 'emily.davis@example.com', '4445556666', 'SuburbD'),
+(5, 'Daniel Brown', 'daniel.brown@example.com', '7778889999', 'SuburbE');
+
+-- Inserindo nas tabelas de Lead
+INSERT INTO Lead (LeadID, ContactFirstName, ContactFullName, ContactPhoneNumber, ContactEmail, Suburb, Category, Price, Description, Status, DateCreated) VALUES
+(1, 'John', 'John Doe', '1234567890', 'john.doe@example.com', 'SuburbA', 'Plumbing', 150.50, 'Fix the sink', 'Invited', '2024-10-22'),
+(2, 'Jane', 'Jane Smith', '0987654321', 'jane.smith@example.com', 'SuburbB', 'Electrical', 200.00, 'Install light fixtures', 'Accepted', '2024-10-22'),
+(3, 'Mike', 'Mike Johnson', '1112223333', 'mike.johnson@example.com', 'SuburbC', 'Landscaping', 300.75, 'Garden renovation', 'Declined', '2024-10-22'),
+(4, 'Emily', 'Emily Davis', '4445556666', 'emily.davis@example.com', 'SuburbD', 'Cleaning', 120.00, 'House cleaning', 'Accepted', '2024-10-22'),
+(5, 'Daniel', 'Daniel Brown', '7778889999', 'daniel.brown@example.com', 'SuburbE', 'Painting', 500.00, 'Painting the living room', 'Invited', '2024-10-22');
+
+-- Inserindo nas tabelas de LeadLog
+INSERT INTO LeadLog (LogID, LeadID, Status, PriceApplied, DiscountApplied, ActionDate, NotificationSent) VALUES
+(1, 1, 'Invited', 150.50, NULL, '2024-10-23', TRUE),
+(2, 2, 'Accepted', 200.00, 10.00, '2024-10-23', TRUE),
+(3, 3, 'Declined', 300.75, NULL, '2024-10-23', FALSE),
+(4, 4, 'Accepted', 120.00, 5.00, '2024-10-23', TRUE),
+(5, 5, 'Invited', 500.00, NULL, '2024-10-23', FALSE);
+
+-- Inserindo nas tabelas de Job
+INSERT INTO Job (JobID, LeadID, JobDescription, JobDate, JobPrice, JobCategory) VALUES
+(1, 1, 'Fixing the sink', '2024-10-24', 150.50, 'Plumbing'),
+(2, 2, 'Installing light fixtures', '2024-10-24', 200.00, 'Electrical'),
+(3, 3, 'Garden renovation', '2024-10-24', 300.75, 'Landscaping'),
+(4, 4, 'House cleaning service', '2024-10-24', 120.00, 'Cleaning'),
+(5, 5, 'Living room painting', '2024-10-24', 500.00, 'Painting');
+
+-- Repetir para gerar mais inserções
+
+-- Adicionando mais contatos
+INSERT INTO Contact (ContactID, FullName, Email, PhoneNumber, Suburb) VALUES
+(6, 'Olivia Wilson', 'olivia.wilson@example.com', '3334445555', 'SuburbF'),
+(7, 'Liam Moore', 'liam.moore@example.com', '6667778888', 'SuburbG'),
+(8, 'Sophia Taylor', 'sophia.taylor@example.com', '9990001111', 'SuburbH'),
+(9, 'Mason Anderson', 'mason.anderson@example.com', '2223334444', 'SuburbI'),
+(10, 'Isabella Martinez', 'isabella.martinez@example.com', '5556667777', 'SuburbJ');
+
+-- Gerando mais leads
+INSERT INTO Lead (LeadID, ContactFirstName, ContactFullName, ContactPhoneNumber, ContactEmail, Suburb, Category, Price, Description, Status, DateCreated) VALUES
+(6, 'Olivia', 'Olivia Wilson', '3334445555', 'olivia.wilson@example.com', 'SuburbF', 'Plumbing', 180.75, 'Fix the leaking pipe', 'Accepted', '2024-10-22'),
+(7, 'Liam', 'Liam Moore', '6667778888', 'liam.moore@example.com', 'SuburbG', 'Electrical', 220.50, 'Repair wiring', 'Invited', '2024-10-22'),
+(8, 'Sophia', 'Sophia Taylor', '9990001111', 'sophia.taylor@example.com', 'SuburbH', 'Landscaping', 350.00, 'Tree removal', 'Accepted', '2024-10-22'),
+(9, 'Mason', 'Mason Anderson', '2223334444', 'mason.anderson@example.com', 'SuburbI', 'Cleaning', 90.00, 'Window cleaning', 'Declined', '2024-10-22'),
+(10, 'Isabella', 'Isabella Martinez', '5556667777', 'isabella.martinez@example.com', 'SuburbJ', 'Painting', 600.00, 'Exterior wall painting', 'Invited', '2024-10-22');
+
+-- Inserindo nos logs correspondentes
+INSERT INTO LeadLog (LogID, LeadID, Status, PriceApplied, DiscountApplied, ActionDate, NotificationSent) VALUES
+(6, 6, 'Accepted', 180.75, 5.00, '2024-10-23', TRUE),
+(7, 7, 'Invited', 220.50, NULL, '2024-10-23', TRUE),
+(8, 8, 'Accepted', 350.00, 15.00, '2024-10-23', TRUE),
+(9, 9, 'Declined', 90.00, NULL, '2024-10-23', FALSE),
+(10, 10, 'Invited', 600.00, NULL, '2024-10-23', TRUE);
+
+-- Inserindo mais jobs
+INSERT INTO Job (JobID, LeadID, JobDescription, JobDate, JobPrice, JobCategory) VALUES
+(6, 6, 'Fixing the leaking pipe', '2024-10-24', 180.75, 'Plumbing'),
+(7, 7, 'Repairing the wiring', '2024-10-24', 220.50, 'Electrical'),
+(8, 8, 'Removing trees', '2024-10-24', 350.00, 'Landscaping'),
+(9, 9, 'Cleaning windows', '2024-10-24', 90.00, 'Cleaning'),
+(10, 10, 'Painting exterior walls', '2024-10-24', 600.00, 'Painting');
